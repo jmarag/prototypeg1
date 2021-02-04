@@ -1,4 +1,4 @@
-package com.siensia.gestionpacientes.backend.business.model;
+package com.sinensia.gestionpacientes.backend.business.model;
 
 import java.util.Date;
 
@@ -10,7 +10,7 @@ public class Registros {
 	private double longitud;
 	private double latitud;
 	private double peso;
-	private int presoin_maxima;
+	private int presion_maxima;
 	private int presion_minima;
 	private int pasos;
 
@@ -19,7 +19,7 @@ public class Registros {
 	}
 
 	public Registros(int id, String dni_usuario, Date hora_registro, double longitud, double latitud, double peso,
-			int presoin_maxima, int presion_minima, int pasos) {
+			int presion_maxima, int presion_minima, int pasos) {
 		super();
 		this.id = id;
 		this.dni_usuario = dni_usuario;
@@ -27,7 +27,7 @@ public class Registros {
 		this.longitud = longitud;
 		this.latitud = latitud;
 		this.peso = peso;
-		this.presoin_maxima = presoin_maxima;
+		this.presion_maxima = presion_maxima;
 		this.presion_minima = presion_minima;
 		this.pasos = pasos;
 	}
@@ -80,12 +80,12 @@ public class Registros {
 		this.peso = peso;
 	}
 
-	public int getPresoin_maxima() {
-		return presoin_maxima;
+	public int getPresion_maxima() {
+		return presion_maxima;
 	}
 
-	public void setPresoin_maxima(int presoin_maxima) {
-		this.presoin_maxima = presoin_maxima;
+	public void setPresion_maxima(int presion_maxima) {
+		this.presion_maxima = presion_maxima;
 	}
 
 	public int getPresion_minima() {
@@ -129,8 +129,8 @@ public class Registros {
 	@Override
 	public String toString() {
 		return "Registros [id=" + id + ", dni_usuario=" + dni_usuario + ", hora_registro=" + hora_registro
-				+ ", longitud=" + longitud + ", latitud=" + latitud + ", peso=" + peso + ", presoin_maxima="
-				+ presoin_maxima + ", presion_minima=" + presion_minima + ", pasos=" + pasos + "]";
+				+ ", longitud=" + longitud + ", latitud=" + latitud + ", peso=" + peso + ", presion_maxima="
+				+ presion_maxima + ", presion_minima=" + presion_minima + ", pasos=" + pasos + "]";
 	}
 
 }
