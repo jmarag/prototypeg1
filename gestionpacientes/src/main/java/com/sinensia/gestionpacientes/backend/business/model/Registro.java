@@ -2,7 +2,7 @@ package com.sinensia.gestionpacientes.backend.business.model;
 
 import java.util.Date;
 
-public class Registros {
+public class Registro {
 
 	private int id;
 	private String dni_usuario;
@@ -14,11 +14,11 @@ public class Registros {
 	private int presion_minima;
 	private int pasos;
 
-	public Registros() {
+	public Registro() {
 		super();
 	}
 
-	public Registros(int id, String dni_usuario, Date hora_registro, double longitud, double latitud, double peso,
+	public Registro(int id, String dni_usuario, Date hora_registro, double longitud, double latitud, double peso,
 			int presion_maxima, int presion_minima, int pasos) {
 		super();
 		this.id = id;
@@ -120,7 +120,7 @@ public class Registros {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Registros other = (Registros) obj;
+		Registro other = (Registro) obj;
 		if (id != other.id)
 			return false;
 		return true;
