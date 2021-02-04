@@ -5,7 +5,7 @@ import java.util.Date;
 public class Registro {
 
 	private int id;
-	private String dni_usuario;
+	private Usuario dni_usuario;
 	private Date hora_registro;
 	private double longitud;
 	private double latitud;
@@ -18,20 +18,6 @@ public class Registro {
 		super();
 	}
 
-	public Registro(int id, String dni_usuario, Date hora_registro, double longitud, double latitud, double peso,
-			int presion_maxima, int presion_minima, int pasos) {
-		super();
-		this.id = id;
-		this.dni_usuario = dni_usuario;
-		this.hora_registro = hora_registro;
-		this.longitud = longitud;
-		this.latitud = latitud;
-		this.peso = peso;
-		this.presion_maxima = presion_maxima;
-		this.presion_minima = presion_minima;
-		this.pasos = pasos;
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -40,11 +26,11 @@ public class Registro {
 		this.id = id;
 	}
 
-	public String getDni_usuario() {
+	public Usuario getDni_usuario() {
 		return dni_usuario;
 	}
 
-	public void setDni_usuario(String dni_usuario) {
+	public void setDni_usuario(Usuario dni_usuario) {
 		this.dni_usuario = dni_usuario;
 	}
 
