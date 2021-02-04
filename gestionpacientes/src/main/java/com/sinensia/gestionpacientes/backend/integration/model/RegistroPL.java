@@ -2,18 +2,45 @@ package com.sinensia.gestionpacientes.backend.integration.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+import javax.persistence.TableGenerator;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "REGISTROS")
 public class RegistroPL {
 
+	@Id
+	@TableGenerator(name = "GENERADOR_REGISTROS",
+		table = "SECUENCIAS",
+		pkColumnName = "NOMBRE_SECUENCIA",
+		pkColumnValue = "REGISTROS_SEQ",
+		valueColumnName = "VALOR_SECUENCIA",
+		allocationSize = 1)
+	@GeneratedValue(strategy = GenerationType.TABLE, generator = "GENERADOR_REGISTROS")
 	private int id;
+	
+	@ManyToOne
+	@JoinColumn(name="DNI_USUARIO")
 	private String dni_usuario;
+	
+	@Temporal(TemporalType.TIMESTAMP)
 	private Date hora_registro;
+	
 	private double longitud;
 	private double latitud;
 	private double peso;
 	private int presion_maxima;
 	private int presion_minima;
 	private int pasos;
-	
+
 	public RegistroPL() {
 	}
 

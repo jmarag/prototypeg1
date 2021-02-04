@@ -2,17 +2,30 @@ package com.sinensia.gestionpacientes.backend.integration.model;
 
 import java.util.Date;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+@Entity
+@Table(name = "USUARIOS")
 public class UsuarioPL {
 
+	@Id
 	private String dni;
+
 	private String nombre;
 	private String apellido1;
 	private String apellido2;
 	private String sexo;
+
+	@Temporal(TemporalType.DATE)
 	private Date fechaNacimiento;
+
 	private int altura;
 	private String observaciones;
-	
+
 	public UsuarioPL() {
 	}
 
@@ -139,5 +152,5 @@ public class UsuarioPL {
 		builder.append("]");
 		return builder.toString();
 	}
-	
+
 }
