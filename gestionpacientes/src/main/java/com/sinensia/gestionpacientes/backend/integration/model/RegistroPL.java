@@ -29,7 +29,7 @@ public class RegistroPL {
 	
 	@ManyToOne
 	@JoinColumn(name="DNI_USUARIO")
-	private String dni_usuario;
+	private UsuarioPL dni_usuario;
 	
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date hora_registro;
@@ -44,19 +44,6 @@ public class RegistroPL {
 	public RegistroPL() {
 	}
 
-	public RegistroPL(int id, String dni_usuario, Date hora_registro, double longitud, double latitud, double peso,
-			int presion_maxima, int presion_minima, int pasos) {
-		this.id = id;
-		this.dni_usuario = dni_usuario;
-		this.hora_registro = hora_registro;
-		this.longitud = longitud;
-		this.latitud = latitud;
-		this.peso = peso;
-		this.presion_maxima = presion_maxima;
-		this.presion_minima = presion_minima;
-		this.pasos = pasos;
-	}
-
 	public int getId() {
 		return id;
 	}
@@ -65,11 +52,12 @@ public class RegistroPL {
 		this.id = id;
 	}
 
-	public String getDni_usuario() {
+
+	public UsuarioPL getDni_usuario() {
 		return dni_usuario;
 	}
 
-	public void setDni_usuario(String dni_usuario) {
+	public void setDni_usuario(UsuarioPL dni_usuario) {
 		this.dni_usuario = dni_usuario;
 	}
 
@@ -175,5 +163,4 @@ public class RegistroPL {
 		builder.append("]");
 		return builder.toString();
 	}
-
 }
