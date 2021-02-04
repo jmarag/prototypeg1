@@ -1,0 +1,33 @@
+Datos de los usuarios
+
+- DNI (business key)
+- nombre
+- apellido1
+- apellido2
+- sexo(HOMBRE,MUJER)
+- fecha de nacimiento
+- altura
+- observaciones
+
+Los datos que envía el usuario
+
+- timestamp
+- geolocalización
+- peso
+- presión arterial
+- pasos
+
+
+TODO:
+
+1.- Definir el modelo (integración/business)
+2.- Definir e implementar interfaces de la capa de business
+	(crear, obtener listados, obtener a partir de código)
+3.- Crear API Rest
+4.- Crear web API con JSP
+
+
+
+
+
+fichero spring-devtools.properties dentro de META-INF > resources
