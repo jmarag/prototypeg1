@@ -23,11 +23,11 @@ public class AppErrorController implements ErrorController{
 			Integer statusCode = Integer.valueOf(status.toString());
 
 			if (statusCode == HttpStatus.NOT_FOUND.value()) {
-				paginaError = "404";
+				paginaError = "error404";
 			}
 
 			if (statusCode == HttpStatus.INTERNAL_SERVER_ERROR.value()) {
-				paginaError = "500";
+				paginaError = "error500";
 			}
 
 		}

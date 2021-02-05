@@ -2,9 +2,12 @@ package com.sinensia.gestionpacientes.backend.business.services.impl;
 
 import java.util.List;
 
+import org.springframework.stereotype.Service;
+
 import com.sinensia.gestionpacientes.backend.business.model.Registro;
 import com.sinensia.gestionpacientes.backend.business.services.RegistroServices;
 
+@Service
 public class RegistroServicesImpl implements RegistroServices {
 
 	@Override

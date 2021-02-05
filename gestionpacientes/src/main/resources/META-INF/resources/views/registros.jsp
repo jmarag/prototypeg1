@@ -9,7 +9,7 @@
 	<title>Gestión de Usuarios</title>
 </head>
 <body>
-	<jsp:include page="Navegation.jsp"/>
+	<jsp:include page="navegation.jsp"/>
 	<h1>Gestión de Usuarios</h1>
 	<hr>
 	<h2>Listado de Usuarios</h2>

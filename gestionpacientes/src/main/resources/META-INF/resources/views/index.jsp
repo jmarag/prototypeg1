@@ -3,11 +3,11 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>Gestion de Salud</title>
+	<meta charset="ISO-8859-1">
+	<title>Gestion de Salud</title>
 </head>
 <body>
-	<jsp:include page="Navegation.jsp"/>
+	<jsp:include page="navegation.jsp"/>
 	<h1>Gestión de Salud</h1>
 	<hr>
 	<p>Bienvenidos a la cupula del trueno!</p>

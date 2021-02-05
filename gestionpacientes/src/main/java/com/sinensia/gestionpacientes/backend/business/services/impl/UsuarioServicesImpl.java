@@ -25,14 +25,14 @@ import com.sinensia.gestionpacientes.backend.integration.repositories.UsuarioPLR
 public class UsuarioServicesImpl implements UsuarioServices {
 
 	@Autowired
+	private DozerBeanMapper dozerBeanMapper;
+	
+	@Autowired
 	private UsuarioPLRepository usuarioPLRepository;
 	
 	//TODO: Preguntar a Jordi donde van los metodos de registros de un usuario
 	@Autowired
 	private RegistroPLRepository registroPLRepository;
-	
-	@Autowired
-	private DozerBeanMapper dozerBeanMapper;
 	
 	@Override
 	public List<Usuario> getAll() {
