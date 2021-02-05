@@ -39,7 +39,7 @@ public class RegistroPL {
 	private double peso;
 	private int presion_maxima;
 	private int presion_minima;
-	private int pasos;
+	private Integer pasos;
 
 	public RegistroPL() {
 	}

@@ -1,4 +1,4 @@
-package com.sinensia.gestionpacientes.backend.integration.presentation.restcontrollers;
+package com.sinensia.gestionpacientes.backend.presentation.restcontrollers;
 
 import java.util.List;
 import java.util.Optional;
@@ -17,19 +17,19 @@ import com.sinensia.gestionpacientes.backend.integration.repositories.UsuarioPLR
 
 @RestController
 @CrossOrigin
-@RequestMapping
+@RequestMapping("/usuarios")
 public class UsuarioController {
 
 	@Autowired
 	private UsuarioPLRepository usuarioPLRepository;
 
-	@GetMapping("/usuarios")
+	@GetMapping
 	public List<UsuarioPL> getAll() {
 
 		return usuarioPLRepository.findAll();
 	}
-
-	@GetMapping("/usuario/{dni}")
+	
+	@GetMapping("/{dni}")
 	public UsuarioPL getByDNI(@PathVariable String dni) {
 		Optional<UsuarioPL> optionalUsuarioPL = usuarioPLRepository.findById(dni);
 		UsuarioPL usuarioPL = optionalUsuarioPL.orElse(null);
@@ -37,7 +37,7 @@ public class UsuarioController {
 		return usuarioPL;
 	}
 
-	@PostMapping("/crear-usuario")
+	@PostMapping
 	public UsuarioPL create(@RequestBody UsuarioPL usuario) {
 
 		return usuarioPLRepository.save(usuario);
