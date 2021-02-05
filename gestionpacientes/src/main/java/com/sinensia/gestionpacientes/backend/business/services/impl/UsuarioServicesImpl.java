@@ -26,7 +26,6 @@ public class UsuarioServicesImpl implements UsuarioServices {
 	@Autowired
 	private UsuarioPLRepository usuarioPLRepository;
 	
-	//TODO: Preguntar a Jordi donde van los metodos de registros de un usuario
 	@Autowired
 	private RegistroPLRepository registroPLRepository;	
 	
