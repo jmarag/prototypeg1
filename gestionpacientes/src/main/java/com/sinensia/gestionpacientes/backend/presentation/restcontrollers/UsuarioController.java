@@ -1,5 +1,6 @@
 package com.sinensia.gestionpacientes.backend.presentation.restcontrollers;
 
+import java.util.Date;
 import java.util.List;
 import java.util.Optional;
 
@@ -10,9 +11,12 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sinensia.gestionpacientes.backend.integration.model.RegistroPL;
 import com.sinensia.gestionpacientes.backend.integration.model.UsuarioPL;
+import com.sinensia.gestionpacientes.backend.integration.repositories.RegistroPLRepository;
 import com.sinensia.gestionpacientes.backend.integration.repositories.UsuarioPLRepository;
 
 @RestController
@@ -22,6 +26,9 @@ public class UsuarioController {
 
 	@Autowired
 	private UsuarioPLRepository usuarioPLRepository;
+	
+	@Autowired
+	private RegistroPLRepository registroPLRepository;
 
 	@GetMapping
 	public List<UsuarioPL> getAll() {
@@ -35,6 +42,18 @@ public class UsuarioController {
 		UsuarioPL usuarioPL = optionalUsuarioPL.orElse(null);
 
 		return usuarioPL;
+	}
+	
+	@GetMapping("/{dni}/lecturas")
+	public List<RegistroPL> getByDNILecturas(@PathVariable String dni) {
+		return registroPLRepository.findByUsuarioDni(dni);
+	}
+	
+	@GetMapping("/{dni}/lecturasFecha")
+	public List<RegistroPL> getByDNILecturasFecha(@PathVariable String dni,  
+			@RequestParam (name="desde") Date fechaDesde, 
+			@RequestParam (name="hasta") Date fechaHasta){
+		return registroPLRepository.findByHoraRegistroBeforeAndHoraRegistroAfterAndUsuarioDni(fechaDesde, fechaHasta,dni);
 	}
 
 	@PostMapping

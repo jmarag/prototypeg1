@@ -30,7 +30,7 @@ public class RegistroController {
 	}
 	
 	@GetMapping("/{id}")
-	public RegistroPL getByID(@PathVariable int id) {
+	public RegistroPL getByID(@PathVariable Integer id) {
 		Optional<RegistroPL> optionalRegistroPL = registroPLRepository.findById(id);
 		RegistroPL registroPL = optionalRegistroPL.orElse(null);
 		

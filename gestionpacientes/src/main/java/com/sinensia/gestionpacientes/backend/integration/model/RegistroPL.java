@@ -29,16 +29,16 @@ public class RegistroPL {
 	
 	@ManyToOne
 	@JoinColumn(name="DNI_USUARIO")
-	private UsuarioPL dni_usuario;
+	private UsuarioPL usuario;
 	
 	@Temporal(TemporalType.TIMESTAMP)
-	private Date hora_registro;
+	private Date horaRegistro;
 	
 	private double longitud;
 	private double latitud;
 	private double peso;
-	private int presion_maxima;
-	private int presion_minima;
+	private int presionMaxima;
+	private int presionMinima;
 	private Integer pasos;
 
 	public RegistroPL() {
@@ -52,21 +52,20 @@ public class RegistroPL {
 		this.id = id;
 	}
 
-
-	public UsuarioPL getDni_usuario() {
-		return dni_usuario;
+	public UsuarioPL getUsuario() {
+		return usuario;
 	}
 
-	public void setDni_usuario(UsuarioPL dni_usuario) {
-		this.dni_usuario = dni_usuario;
+	public void setUsuario(UsuarioPL usuario) {
+		this.usuario = usuario;
 	}
 
-	public Date getHora_registro() {
-		return hora_registro;
+	public Date getHoraRegistro() {
+		return horaRegistro;
 	}
 
-	public void setHora_registro(Date hora_registro) {
-		this.hora_registro = hora_registro;
+	public void setHoraRegistro(Date horaRegistro) {
+		this.horaRegistro = horaRegistro;
 	}
 
 	public double getLongitud() {
@@ -93,27 +92,27 @@ public class RegistroPL {
 		this.peso = peso;
 	}
 
-	public int getPresion_maxima() {
-		return presion_maxima;
+	public int getPresionMaxima() {
+		return presionMaxima;
 	}
 
-	public void setPresion_maxima(int presion_maxima) {
-		this.presion_maxima = presion_maxima;
+	public void setPresionMaxima(int presionMaxima) {
+		this.presionMaxima = presionMaxima;
 	}
 
-	public int getPresion_minima() {
-		return presion_minima;
+	public int getPresionMinima() {
+		return presionMinima;
 	}
 
-	public void setPresion_minima(int presion_minima) {
-		this.presion_minima = presion_minima;
+	public void setPresionMinima(int presionMinima) {
+		this.presionMinima = presionMinima;
 	}
 
-	public int getPasos() {
+	public Integer getPasos() {
 		return pasos;
 	}
 
-	public void setPasos(int pasos) {
+	public void setPasos(Integer pasos) {
 		this.pasos = pasos;
 	}
 
@@ -141,26 +140,9 @@ public class RegistroPL {
 
 	@Override
 	public String toString() {
-		StringBuilder builder = new StringBuilder();
-		builder.append("RegistroPL [id=");
-		builder.append(id);
-		builder.append(", dni_usuario=");
-		builder.append(dni_usuario);
-		builder.append(", hora_registro=");
-		builder.append(hora_registro);
-		builder.append(", longitud=");
-		builder.append(longitud);
-		builder.append(", latitud=");
-		builder.append(latitud);
-		builder.append(", peso=");
-		builder.append(peso);
-		builder.append(", presion_maxima=");
-		builder.append(presion_maxima);
-		builder.append(", presion_minima=");
-		builder.append(presion_minima);
-		builder.append(", pasos=");
-		builder.append(pasos);
-		builder.append("]");
-		return builder.toString();
+		return "RegistroPL [id=" + id + ", usuario=" + usuario + ", horaRegistro=" + horaRegistro + ", longitud="
+				+ longitud + ", latitud=" + latitud + ", peso=" + peso + ", presionMaxima=" + presionMaxima
+				+ ", presionMinima=" + presionMinima + ", pasos=" + pasos + "]";
 	}
+
 }

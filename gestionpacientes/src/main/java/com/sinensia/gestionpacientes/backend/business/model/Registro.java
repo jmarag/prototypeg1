@@ -12,7 +12,7 @@ public class Registro {
 	private double peso;
 	private int presion_maxima;
 	private int presion_minima;
-	private int pasos;
+	private Integer pasos;
 
 	public Registro() {
 		super();
@@ -82,11 +82,11 @@ public class Registro {
 		this.presion_minima = presion_minima;
 	}
 
-	public int getPasos() {
+	public Integer getPasos() {
 		return pasos;
 	}
 
-	public void setPasos(int pasos) {
+	public void setPasos(Integer pasos) {
 		this.pasos = pasos;
 	}
 
