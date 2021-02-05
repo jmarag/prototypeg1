@@ -5,13 +5,13 @@ import java.util.Date;
 public class Registro {
 
 	private int id;
-	private Usuario dni_usuario;
-	private Date hora_registro;
+	private Usuario dniUsuario;
+	private Date horaRegistro;
 	private double longitud;
 	private double latitud;
 	private double peso;
-	private int presion_maxima;
-	private int presion_minima;
+	private int presionMaxima;
+	private int presionMinima;
 	private Integer pasos;
 
 	public Registro() {
@@ -26,20 +26,20 @@ public class Registro {
 		this.id = id;
 	}
 
-	public Usuario getDni_usuario() {
-		return dni_usuario;
+	public Usuario getDniUsuario() {
+		return dniUsuario;
 	}
 
-	public void setDni_usuario(Usuario dni_usuario) {
-		this.dni_usuario = dni_usuario;
+	public void setDniUsuario(Usuario dniUsuario) {
+		this.dniUsuario = dniUsuario;
 	}
 
-	public Date getHora_registro() {
-		return hora_registro;
+	public Date getHoraRegistro() {
+		return horaRegistro;
 	}
 
-	public void setHora_registro(Date hora_registro) {
-		this.hora_registro = hora_registro;
+	public void setHoraRegistro(Date horaRegistro) {
+		this.horaRegistro = horaRegistro;
 	}
 
 	public double getLongitud() {
@@ -66,20 +66,20 @@ public class Registro {
 		this.peso = peso;
 	}
 
-	public int getPresion_maxima() {
-		return presion_maxima;
+	public int getPresionMaxima() {
+		return presionMaxima;
 	}
 
-	public void setPresion_maxima(int presion_maxima) {
-		this.presion_maxima = presion_maxima;
+	public void setPresionMaxima(int presionMaxima) {
+		this.presionMaxima = presionMaxima;
 	}
 
-	public int getPresion_minima() {
-		return presion_minima;
+	public int getPresionMinima() {
+		return presionMinima;
 	}
 
-	public void setPresion_minima(int presion_minima) {
-		this.presion_minima = presion_minima;
+	public void setPresionMinima(int presionMinima) {
+		this.presionMinima = presionMinima;
 	}
 
 	public Integer getPasos() {
@@ -114,9 +114,8 @@ public class Registro {
 
 	@Override
 	public String toString() {
-		return "Registros [id=" + id + ", dni_usuario=" + dni_usuario + ", hora_registro=" + hora_registro
-				+ ", longitud=" + longitud + ", latitud=" + latitud + ", peso=" + peso + ", presion_maxima="
-				+ presion_maxima + ", presion_minima=" + presion_minima + ", pasos=" + pasos + "]";
+		return "Registro [id=" + id + ", dniUsuario=" + dniUsuario + ", horaRegistro=" + horaRegistro + ", longitud="
+				+ longitud + ", latitud=" + latitud + ", peso=" + peso + ", presionMaxima=" + presionMaxima
+				+ ", presionMinima=" + presionMinima + ", pasos=" + pasos + "]";
 	}
-
 }
