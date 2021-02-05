@@ -8,8 +8,6 @@ import org.dozer.DozerBeanMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import org.springframework.stereotype.Service;
-
 import com.sinensia.gestionpacientes.backend.business.model.Registro;
 import com.sinensia.gestionpacientes.backend.business.services.RegistroServices;
 import com.sinensia.gestionpacientes.backend.integration.model.RegistroPL;

@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -18,8 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.sinensia.gestionpacientes.backend.business.model.Registro;
 import com.sinensia.gestionpacientes.backend.business.model.Usuario;
 import com.sinensia.gestionpacientes.backend.business.services.UsuarioServices;
-import com.sinensia.gestionpacientes.backend.integration.model.RegistroPL;
-import com.sinensia.gestionpacientes.backend.integration.repositories.RegistroPLRepository;
 
 @RestController
 @CrossOrigin
@@ -29,9 +26,6 @@ public class UsuarioController {
 	@Autowired
 	private UsuarioServices usuarioServices;
 	
-	@Autowired
-	private RegistroPLRepository registroPLRepository;
-
 	@GetMapping
 	public List<Usuario> getAll() {
 		return usuarioServices.getAll();
