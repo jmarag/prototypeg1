@@ -34,6 +34,23 @@ public class UsuarioServicesImpl implements UsuarioServices {
 	@Autowired
 	private RegistroPLRepository registroPLRepository;
 	
+<<<<<<< Updated upstream
+=======
+	@Autowired
+	private DozerBeanMapper dozerBeanMapper;
+	
+	
+	@Override
+	public Usuario save(Usuario usuario) {
+		
+		UsuarioPL usuarioPL = dozerBeanMapper.map(usuario, UsuarioPL.class);
+		
+		Usuario createdUsuario = dozerBeanMapper.map(usuarioPLRepository.save(usuarioPL), Usuario.class);
+		
+		return createdUsuario;
+	}
+	
+>>>>>>> Stashed changes
 	@Override
 	public List<Usuario> getAll() {
 		
@@ -49,16 +66,6 @@ public class UsuarioServicesImpl implements UsuarioServices {
 		
 		return usuarios;
 	}
-	
-	@Override
-	public Usuario save(Usuario usuario) {
-		
-		UsuarioPL usuarioPL = dozerBeanMapper.map(usuario, UsuarioPL.class);
-		
-		Usuario createdUsuario = dozerBeanMapper.map(usuarioPLRepository.save(usuarioPL), Usuario.class);
-		
-		return createdUsuario;
-	}
 
 	@Override
 	public Usuario getByDNI(String dni) {
@@ -70,7 +77,6 @@ public class UsuarioServicesImpl implements UsuarioServices {
 		
 		return usuario;
 	}
-	
 	
 	@Override
 	public List<Registro> getByDNILecturas(String dni) {

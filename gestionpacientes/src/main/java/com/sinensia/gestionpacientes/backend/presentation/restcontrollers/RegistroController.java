@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sinensia.gestionpacientes.backend.business.model.Registro;
+import com.sinensia.gestionpacientes.backend.business.services.RegistroServices;
 import com.sinensia.gestionpacientes.backend.integration.model.RegistroPL;
 import com.sinensia.gestionpacientes.backend.integration.repositories.RegistroPLRepository;
 
@@ -21,25 +23,20 @@ import com.sinensia.gestionpacientes.backend.integration.repositories.RegistroPL
 public class RegistroController {
 
 	@Autowired
-	private RegistroPLRepository registroPLRepository;
+	private RegistroServices registroServices;
 	
 	@GetMapping
-	public List<RegistroPL> getAll() {
-
-		return registroPLRepository.findAll();
+	public List<Registro> getAll() {
+		return registroServices.getAll();
 	}
 	
 	@GetMapping("/{id}")
-	public RegistroPL getByID(@PathVariable Integer id) {
-		Optional<RegistroPL> optionalRegistroPL = registroPLRepository.findById(id);
-		RegistroPL registroPL = optionalRegistroPL.orElse(null);
-		
-		return registroPL;
+	public Registro getByID(@PathVariable Integer id) {		
+		return registroServices.getById(id);
 	}
 	
 	@PostMapping
-	public RegistroPL create(@RequestBody RegistroPL registro) {
-
-		return registroPLRepository.save(registro);
+	public Registro create(@RequestBody Registro registro) {
+		return registroServices.save(registro);
 	}
 }

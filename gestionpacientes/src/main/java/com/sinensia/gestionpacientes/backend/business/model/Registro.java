@@ -26,20 +26,20 @@ public class Registro {
 		this.id = id;
 	}
 
-	public Usuario getDni_usuario() {
+	public Usuario getUsuario() {
 		return usuario;
 	}
 
-	public void setDni_usuario(Usuario dni_usuario) {
-		this.usuario = dni_usuario;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
-	public Date getHora_registro() {
+	public Date getHoraRegistro() {
 		return horaRegistro;
 	}
 
-	public void setHora_registro(Date hora_registro) {
-		this.horaRegistro = hora_registro;
+	public void setHoraRegistro(Date horaRegistro) {
+		this.horaRegistro = horaRegistro;
 	}
 
 	public double getLongitud() {
@@ -66,20 +66,20 @@ public class Registro {
 		this.peso = peso;
 	}
 
-	public int getPresion_maxima() {
+	public int getPresionMaxima() {
 		return presionMaxima;
 	}
 
-	public void setPresion_maxima(int presion_maxima) {
-		this.presionMaxima = presion_maxima;
+	public void setPresionMaxima(int presionMaxima) {
+		this.presionMaxima = presionMaxima;
 	}
 
-	public int getPresion_minima() {
+	public int getPresionMinima() {
 		return presionMinima;
 	}
 
-	public void setPresion_minima(int presion_minima) {
-		this.presionMinima = presion_minima;
+	public void setPresionMinima(int presionMinima) {
+		this.presionMinima = presionMinima;
 	}
 
 	public Integer getPasos() {

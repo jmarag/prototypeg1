@@ -11,6 +11,6 @@ public interface RegistroServices {
 
 	public List<Registro> getAll();
 
-	public Registro read(int id);
+	public Registro getById(int id);
 
 }

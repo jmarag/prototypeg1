@@ -13,7 +13,7 @@ import com.sinensia.gestionpacientes.backend.business.services.RegistroServices;
 import com.sinensia.gestionpacientes.backend.business.services.UsuarioServices;
 
 @Controller
-@RequestMapping("/gestionSalud")
+@RequestMapping("/gestion-salud")
 public class AppController {
 
 	@Autowired
