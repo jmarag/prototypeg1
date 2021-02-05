@@ -35,7 +35,8 @@
 						Hombre
 					</c:if> <c:if test="${usuario.sexo == 'M'}">
 						Mujer
-					</c:if></td>
+					</c:if>
+					</td>
 				<td><fmt:formatDate pattern="dd-MM-yyyy"
 						value="${usuario.fechaNacimiento}" /></td>
 				<td><fmt:formatNumber value="${usuario.altura}" type="currency"
