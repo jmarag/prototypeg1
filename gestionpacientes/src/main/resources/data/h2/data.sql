@@ -1,6 +1,6 @@
 
 
-INSERT INTO SECUENCIAS (NOMBRE_SECUENCIA, VALOR_SECUENCIA) VALUES ('USUARIOS_SEQ',100000);
+INSERT INTO SECUENCIAS (NOMBRE_SECUENCIA, VALOR_SECUENCIA) VALUES ('REGISTROS_SEQ',100000);
 
 
 insert into USUARIOS (DNI, NOMBRE, APELLIDO1, APELLIDO2, SEXO, FECHA_NACIMIENTO, ALTURA, OBSERVACIONES) values ('08631630R', 'Lemmy', 'Reichartz', 'Daniell', 'H', '2001-05-10', 195, 'In sagittis dui vel nisl. Duis ac nibh. Fusce lacus purus, aliquet at, feugiat non, pretium quis, lectus.');

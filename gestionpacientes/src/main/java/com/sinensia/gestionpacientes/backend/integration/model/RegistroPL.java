@@ -2,6 +2,7 @@ package com.sinensia.gestionpacientes.backend.integration.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -32,13 +33,19 @@ public class RegistroPL {
 	private UsuarioPL usuario;
 	
 	@Temporal(TemporalType.TIMESTAMP)
+	@Column(name="HORA_REGISTRO")
 	private Date horaRegistro;
 	
 	private double longitud;
 	private double latitud;
 	private double peso;
+	
+	@Column(name="PRESION_MAXIMA")
 	private int presionMaxima;
+	
+	@Column(name="PRESION_MINIMA")
 	private int presionMinima;
+	
 	private Integer pasos;
 
 	public RegistroPL() {

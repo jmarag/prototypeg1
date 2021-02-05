@@ -2,7 +2,6 @@ package com.sinensia.gestionpacientes.backend.presentation.restcontrollers;
 
 import java.util.Date;
 import java.util.List;
-import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -10,15 +9,17 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.sinensia.gestionpacientes.backend.business.model.Registro;
+import com.sinensia.gestionpacientes.backend.business.model.Usuario;
+import com.sinensia.gestionpacientes.backend.business.services.UsuarioServices;
 import com.sinensia.gestionpacientes.backend.integration.model.RegistroPL;
-import com.sinensia.gestionpacientes.backend.integration.model.UsuarioPL;
 import com.sinensia.gestionpacientes.backend.integration.repositories.RegistroPLRepository;
-import com.sinensia.gestionpacientes.backend.integration.repositories.UsuarioPLRepository;
 
 @RestController
 @CrossOrigin
@@ -26,41 +27,45 @@ import com.sinensia.gestionpacientes.backend.integration.repositories.UsuarioPLR
 public class UsuarioController {
 
 	@Autowired
-	private UsuarioPLRepository usuarioPLRepository;
+	private UsuarioServices usuarioServices;
 	
 	@Autowired
 	private RegistroPLRepository registroPLRepository;
 
 	@GetMapping
-	public List<UsuarioPL> getAll() {
-
-		return usuarioPLRepository.findAll();
+	public List<Usuario> getAll() {
+		return usuarioServices.getAll();
 	}
 	
 	@GetMapping("/{dni}")
-	public UsuarioPL getByDNI(@PathVariable String dni) {
-		Optional<UsuarioPL> optionalUsuarioPL = usuarioPLRepository.findById(dni);
-		UsuarioPL usuarioPL = optionalUsuarioPL.orElse(null);
-
-		return usuarioPL;
+	public Usuario getByDNI(@PathVariable String dni) {
+		return usuarioServices.getByDNI(dni);
 	}
 	
 	@GetMapping("/{dni}/lecturas")
-	public List<RegistroPL> getByDNILecturas(@PathVariable String dni) {
-		return registroPLRepository.findByUsuarioDni(dni);
+	public List<Registro> getByDNILecturas(@PathVariable String dni) {
+		return usuarioServices.getByDNILecturas(dni);
 	}
 	
 	@GetMapping("/{dni}/lecturas-fecha")
-	public List<RegistroPL> getByDNILecturasFecha(@PathVariable String dni,  
+	public List<Registro> getByDNILecturasFecha(@PathVariable String dni,  
 			@RequestParam (name="desde") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaDesde, 
 			@RequestParam (name="hasta") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaHasta){
 		
-		return registroPLRepository.findByHoraRegistroBetweenAndUsuarioDni(fechaDesde,fechaHasta,dni);
+		return usuarioServices.getByDNILecturasFecha(dni,fechaDesde,fechaHasta);
 	}
 
 	@PostMapping
-	public UsuarioPL create(@RequestBody UsuarioPL usuario) {
+	public Usuario create(@RequestBody Usuario usuario) {
+
+		return usuarioServices.save(usuario);
+	}
+	
+	/*
+	@PutMapping
+	public UsuarioPL update(@RequestBody UsuarioPL usuario) {
 
 		return usuarioPLRepository.save(usuario);
 	}
+	*/
 }

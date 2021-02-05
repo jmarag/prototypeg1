@@ -5,7 +5,11 @@ import java.util.Date;
 public class Registro {
 
 	private int id;
+<<<<<<< Updated upstream
 	private Usuario dniUsuario;
+=======
+	private Usuario usuario;
+>>>>>>> Stashed changes
 	private Date horaRegistro;
 	private double longitud;
 	private double latitud;
@@ -26,6 +30,7 @@ public class Registro {
 		this.id = id;
 	}
 
+<<<<<<< Updated upstream
 	public Usuario getDniUsuario() {
 		return dniUsuario;
 	}
@@ -40,6 +45,22 @@ public class Registro {
 
 	public void setHoraRegistro(Date horaRegistro) {
 		this.horaRegistro = horaRegistro;
+=======
+	public Usuario getDni_usuario() {
+		return usuario;
+	}
+
+	public void setDni_usuario(Usuario dni_usuario) {
+		this.usuario = dni_usuario;
+	}
+
+	public Date getHora_registro() {
+		return horaRegistro;
+	}
+
+	public void setHora_registro(Date hora_registro) {
+		this.horaRegistro = hora_registro;
+>>>>>>> Stashed changes
 	}
 
 	public double getLongitud() {
@@ -66,6 +87,7 @@ public class Registro {
 		this.peso = peso;
 	}
 
+<<<<<<< Updated upstream
 	public int getPresionMaxima() {
 		return presionMaxima;
 	}
@@ -80,6 +102,22 @@ public class Registro {
 
 	public void setPresionMinima(int presionMinima) {
 		this.presionMinima = presionMinima;
+=======
+	public int getPresion_maxima() {
+		return presionMaxima;
+	}
+
+	public void setPresion_maxima(int presion_maxima) {
+		this.presionMaxima = presion_maxima;
+	}
+
+	public int getPresion_minima() {
+		return presionMinima;
+	}
+
+	public void setPresion_minima(int presion_minima) {
+		this.presionMinima = presion_minima;
+>>>>>>> Stashed changes
 	}
 
 	public Integer getPasos() {
@@ -114,8 +152,14 @@ public class Registro {
 
 	@Override
 	public String toString() {
+<<<<<<< Updated upstream
 		return "Registro [id=" + id + ", dniUsuario=" + dniUsuario + ", horaRegistro=" + horaRegistro + ", longitud="
 				+ longitud + ", latitud=" + latitud + ", peso=" + peso + ", presionMaxima=" + presionMaxima
 				+ ", presionMinima=" + presionMinima + ", pasos=" + pasos + "]";
+=======
+		return "Registros [id=" + id + ", usuario=" + usuario + ", horaRegistro=" + horaRegistro
+				+ ", longitud=" + longitud + ", latitud=" + latitud + ", peso=" + peso + ", presionMaxima="
+				+ presionMaxima + ", presionMinima=" + presionMinima + ", pasos=" + pasos + "]";
+>>>>>>> Stashed changes
 	}
 }

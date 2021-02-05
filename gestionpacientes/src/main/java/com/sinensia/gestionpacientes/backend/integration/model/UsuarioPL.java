@@ -2,6 +2,7 @@ package com.sinensia.gestionpacientes.backend.integration.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
@@ -21,24 +22,13 @@ public class UsuarioPL {
 	private String sexo;
 
 	@Temporal(TemporalType.DATE)
+	@Column(name="FECHA_NACIMIENTO")
 	private Date fechaNacimiento;
 
 	private int altura;
 	private String observaciones;
 
 	public UsuarioPL() {
-	}
-
-	public UsuarioPL(String dni, String nombre, String apellido1, String apellido2, String sexo, Date fechaNacimiento,
-			int altura, String observaciones) {
-		this.dni = dni;
-		this.nombre = nombre;
-		this.apellido1 = apellido1;
-		this.apellido2 = apellido2;
-		this.sexo = sexo;
-		this.fechaNacimiento = fechaNacimiento;
-		this.altura = altura;
-		this.observaciones = observaciones;
 	}
 
 	public String getDni() {
