@@ -32,13 +32,7 @@ public class UsuarioServicesImpl implements UsuarioServices {
 	
 	//TODO: Preguntar a Jordi donde van los metodos de registros de un usuario
 	@Autowired
-	private RegistroPLRepository registroPLRepository;
-	
-<<<<<<< Updated upstream
-=======
-	@Autowired
-	private DozerBeanMapper dozerBeanMapper;
-	
+	private RegistroPLRepository registroPLRepository;	
 	
 	@Override
 	public Usuario save(Usuario usuario) {
@@ -50,7 +44,6 @@ public class UsuarioServicesImpl implements UsuarioServices {
 		return createdUsuario;
 	}
 	
->>>>>>> Stashed changes
 	@Override
 	public List<Usuario> getAll() {
 		
