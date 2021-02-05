@@ -16,6 +16,6 @@ public interface RegistroPLRepository extends JpaRepository<RegistroPL, Integer>
 	
 	public List<RegistroPL> findByUsuarioDni(String dni);  
 	
-	public List<RegistroPL> findByHoraRegistroBeforeAndHoraRegistroAfterAndUsuarioDni(Date before, Date after, String dni);  
+	public List<RegistroPL> findByHoraRegistroBetweenAndUsuarioDni(Date before, Date after, String dni);  
 	
 }

@@ -5,6 +5,7 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -49,11 +50,12 @@ public class UsuarioController {
 		return registroPLRepository.findByUsuarioDni(dni);
 	}
 	
-	@GetMapping("/{dni}/lecturasFecha")
+	@GetMapping("/{dni}/lecturas-fecha")
 	public List<RegistroPL> getByDNILecturasFecha(@PathVariable String dni,  
-			@RequestParam (name="desde") Date fechaDesde, 
-			@RequestParam (name="hasta") Date fechaHasta){
-		return registroPLRepository.findByHoraRegistroBeforeAndHoraRegistroAfterAndUsuarioDni(fechaDesde, fechaHasta,dni);
+			@RequestParam (name="desde") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaDesde, 
+			@RequestParam (name="hasta") @DateTimeFormat(pattern = "yyyy-MM-dd") Date fechaHasta){
+		
+		return registroPLRepository.findByHoraRegistroBetweenAndUsuarioDni(fechaDesde,fechaHasta,dni);
 	}
 
 	@PostMapping
