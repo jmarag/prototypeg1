@@ -25,16 +25,28 @@
 			<th>Presion Minima</th>
 			<th>Numero de Pasos</th>
 		</tr>
-		<c:forEach var="usuario" items="${usuario}">
+		<c:forEach var="registro" items="${registros}">
 		<tr>
 			<td>${registro.id}</td>
-			<td>${registro.dniUsuario}</td>
+			<td>${registro.usuario.dni}</td>
 			<td><fmt:formatDate pattern="yyyy-MM-dd" value="${registro.horaRegistro}" /></td>
 			<td>${registro.longitud}</td>
 			<td>${registro.latitud}</td>
-			<td>${registro.peso}</td>
-			<td>${registro.presionMaxima}</td>
-			<td>${registro.presionMinima}</td>
+			<td><fmt:formatNumber value="${registro.peso}"
+								  type="currency"
+								  currencySymbol="kg"
+								  maxFractionDigits="2"/>
+			</td>
+			<td><fmt:formatNumber value="${registro.presionMaxima}"
+								  type="currency"
+								  currencySymbol="mmHg"
+								  maxFractionDigits="0"/>
+			</td>
+			<td><fmt:formatNumber value="${registro.presionMinima}"
+								  type="currency"
+								  currencySymbol="mmHg"
+								  maxFractionDigits="0"/>
+			</td>
 			<td>${registro.pasos}</td>
 		</tr>
 		</c:forEach>
